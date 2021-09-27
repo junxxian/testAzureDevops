@@ -21,11 +21,9 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: KubernetesManifest@0
+- task: Docker@2
   inputs:
-    action: 'deploy'
-    namespace: 'ddd'
-    manifests: 'ccc'
-    containers: 'aaa'
-    imagePullSecrets: 'sss'
+    repository: 'jxstudydocker/test'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
 
