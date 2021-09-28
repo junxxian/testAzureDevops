@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: junxxiantestazuredevops 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: junxxiantestazuredevops
+  template:
+    metadata:
+      labels:
+        app: junxxiantestazuredevops 
+    spec:
+      containers:
+        - name: junxxiantestazuredevops 
+          image: jxdockerregistry.azurecr.io/junxxiantestazuredevops
+          ports:
+          - containerPort: 80
