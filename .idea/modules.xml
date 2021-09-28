@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/stream-study.iml" filepath="$PROJECT_DIR$/stream-study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/devops-k8s.iml" filepath="$PROJECT_DIR$/devops-k8s.iml" />
     </modules>
   </component>
 </project>
