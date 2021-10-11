@@ -11,12 +11,12 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '25c07386-0ad9-4f01-b170-e0d5eebae63b'
+  dockerRegistryServiceConnection: 'd5115468-0b2b-4862-a233-22f7960c33dd'
   imageRepository: 'junxxiantestazuredevops'
   containerRegistry: 'jxdockerregistry.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'jxdockerregistry69d4-auth'
+  imagePullSecret: 'jxdockerregistry2048ad70-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -32,7 +32,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - task: Maven@3
-      displayName: maven build
+      displayName: Maven Build
       inputs:
         mavenPomFile: 'pom.xml'
         publishJUnitResults: false
@@ -41,7 +41,6 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-        
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
@@ -64,7 +63,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'junxxiantestAzureDevops.default'
+    environment: 'junxxiantestAzureDevops-1427.default'
     strategy:
       runOnce:
         deploy:
